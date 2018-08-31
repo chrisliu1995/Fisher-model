@@ -128,7 +128,7 @@ def del_errip_dir(path):
 
 start_time = time.clock()
 
-err_ip = ' '
+
 file_path = ' '
 split_time = ' '
 look_back =
