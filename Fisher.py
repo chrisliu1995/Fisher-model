@@ -133,9 +133,6 @@ file_path = ' '
 split_time = ' '
 look_back =
 
-make_errip_dir(err_ip)
-del_errip_dir('./'+err_ip+'/log')
-
 dataset = load_data(file_path)
 print(dataset.head())
 
@@ -153,7 +150,7 @@ model = build_model(look_back, train_X)
 reduce_lr = keras.callbacks.ReduceLROnPlateau(monitor='val_loss', factor=0.7, patience=10, min_lr=0)
 earlystopper = EarlyStopping(monitor='val_loss',patience=20, verbose=1)
 history = model.fit(train_X, train_y, epochs=200, batch_size=batch_size, validation_data=(test_X, test_y), 
-                    verbose=2, shuffle=False,callbacks=[TensorBoard(log_dir='./'+err_ip+'/log')])
+                    verbose=2, shuffle=False,callbacks=[TensorBoard(log_dir=' ')])
 print(history.history['loss'])
 print(history.history['val_loss'])
 #model.save('my_model.h5')
